@@ -1,0 +1,51 @@
+1 - Setup the Github Repository
+	a)Create a new environment
+	b)create a setup.py
+	c)create requirements.txt
+
+Here, I will VS code to do the coding and push the commits using command prompt as git is not working properly from VS code.
+
+2 - Data Ingestion
+3 - Data Transformation
+4 - Build the ML Model
+5 - Model Evaluation
+6 - Model Deployment
+7 - Model Monitoring
+
+Working with conda and VS code:
+-------------------------------
+1. Open Anaconda command prompt
+2. Goto the folder where you will be working
+3. run "code ."
+
+(base) C:\Users\arnchand>cd C:\Users\arnchand\Desktop\Important Doc\Machine-Learning\MLOps\End-to-End-Project
+
+(base) C:\Users\arnchand\Desktop\Important Doc\Machine-Learning\MLOps\End-to-End-Project>code .
+
+4. VS code opens
+5. Hover over to terminal and open terminal
+6. create a python environment
+conda create -p venv python==3.8 -y
+where 'venv' is the environment name
+
+Activate the environment:
+conda activate venv/
+
+->Create a Repo in github and initialize it.
+->Create the README.md and push it to the repo
+->Create a .gitignore file for python (this will remove all the irrelvant info from the python file while we push our code into git)
+	->Go to repo
+	->Click on Add file->new file
+	->Give the file name '.gitignore'
+	->Give the .gitignore template as python
+	->Click on Commit changes
+	->Go to cmd and run git pull origin main ---- You will be able to see the .gitignore file in the directory
+->Create setup.py and requirements.txt files
+
+'requirements.txt' file will contain all the libraries and packages required for the ML project that needs to be installed
+->'requirements.txt' will have '-e .' which will enable it to trigger setup.py
+'setup.py' will be responsible for creating the ML application as a package and deploy it anywhere
+
+->Create a new folder as src and create '__init__.py' file. This will help the setup.py to identify the folder for which the application needs to be created
+
+-> RUN pip install -r requirements.txt in the terminal -- you will see all the packages getting installed
