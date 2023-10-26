@@ -49,3 +49,17 @@ conda activate venv/
 ->Create a new folder as src and create '__init__.py' file. This will help the setup.py to identify the folder for which the application needs to be created
 
 -> RUN pip install -r requirements.txt in the terminal -- you will see all the packages getting installed
+
+->Now create 'components' folder under src -> This folder is used to create all the modules like data ingestion,model,model_evaluation etc.
+We will also create a '__init__.py' file so that it is created as a package and can be used in the overall application whenever called for.
+
+->Create 'data_ingestion.py','data_transformation.py','model_training.py' file under components folder
+
+-> Similarly create pipeline module under 'src' with 'train_pipeline.py' and 'predict_pipeline.py' and initialize with '__init__.py' file
+
+->Now create 3 more files under 'src' which are important:
+1. logger.py : For log purpose
+2. exception.py : For exception handling
+3. utils.py : For functions which will be used globally by the application (e.g. suppose I want to read data from a database, you can create your mongoDB client here or you want to save the model on to a cloud, we can use this space)
+
+
