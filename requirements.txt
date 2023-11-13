@@ -1,4 +1,11 @@
 pandas
 numpy
 seaborn
--e .
+matplotlib
+scikit-learn
+catboost
+xgboost
+
+#We use '-e .' only during the first time run, to create the egg package, post that if we have to add requirements and run, you can 
+#comment it out
+#-e .

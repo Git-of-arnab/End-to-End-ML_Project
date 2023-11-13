@@ -16,5 +16,5 @@ logging.basicConfig(
 
 #You can test the code to check whether logging is done or not using:
 
-#if __name__ == "__main__":
+# if __name__ == "__main__":
 #   logging.info("Log testing, it is working fine")
