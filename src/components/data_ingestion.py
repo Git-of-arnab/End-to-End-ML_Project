@@ -9,6 +9,12 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass #used to create class variables
 
+from src.components.data_transformation import DataTranformationConfig
+from src.components.data_transformation import DataTransformation
+
+from src.components.model_training import ModelTrainer
+from src.components.model_training import ModelTrainerConfig
+
 @dataclass
 class DataIngestionConfig:
     train_data_path: str=os.path.join("artifact","train.csv") #folder name = artifact, file name=trian.csv
@@ -54,4 +60,9 @@ class DataIngestion:
 
 if __name__ == '__main__':
     data_intake = DataIngestion()
-    data_intake.initiate_data_ingestion()
+    train_data_path,test_data_path = data_intake.initiate_data_ingestion()
+    data_transform = DataTransformation()
+    data_transform.initate_data_transformation(train_path=train_data_path,test_path=test_data_path)
+    train_array,test_array,_ = data_transform.initate_data_transformation(train_path=train_data_path,test_path=test_data_path)
+    model_training = ModelTrainer()
+    print(model_training.initiate_model_trainer(train_arr=train_array,test_arr=test_array))
