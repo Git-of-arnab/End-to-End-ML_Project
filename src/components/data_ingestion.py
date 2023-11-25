@@ -32,7 +32,8 @@ class DataIngestion:
             logging.info('Read the dataset as dataframe')
 
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True) 
-            #here we getting the directory name with respect to train_data_path which is 'artifact' and creating it
+            #Return a string representing the path to which the symbolic link points. 
+            #with respect to train_data_path which is 'artifact' and creating it
             #exist_ok =True will keep the folder saved
 
             df.to_csv(self.ingestion_config.raw_data_path,index=False,header=True) #save the read data into raw_data path
@@ -61,8 +62,10 @@ class DataIngestion:
 if __name__ == '__main__':
     data_intake = DataIngestion()
     train_data_path,test_data_path = data_intake.initiate_data_ingestion()
+    
     data_transform = DataTransformation()
     data_transform.initate_data_transformation(train_path=train_data_path,test_path=test_data_path)
     train_array,test_array,_ = data_transform.initate_data_transformation(train_path=train_data_path,test_path=test_data_path)
+    
     model_training = ModelTrainer()
     print(model_training.initiate_model_trainer(train_arr=train_array,test_arr=test_array))
