@@ -62,4 +62,18 @@ We will also create a '__init__.py' file so that it is created as a package and 
 2. exception.py : For exception handling
 3. utils.py : For functions which will be used globally by the application (e.g. suppose I want to read data from a database, you can create your mongoDB client here or you want to save the model on to a cloud, we can use this space)
 
+You access the flask app using: http://127.0.0.1:5000/predictdata
+
+Now deployment Phase:
+---------------------
+
+1. On AWS:
+-->First, we start with easiest one i.e. using AWS Elastic Beanstalk service for deploying our model by integrating our github repo.
+--> 2 cinfiguration setup need to do for this:
+a) Create a ".ebextension" and inside that create a "python.config" file which will contain the below:
+option_settings:
+	"aws:elasticbeanstalk:container:python":
+	  WSGIPATH: application:application
+
+"application" is nothing but the application.py file name. The above code is to tell the elastic beanstalk what is the entry point of the application
 

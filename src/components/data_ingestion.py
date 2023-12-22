@@ -64,7 +64,7 @@ if __name__ == '__main__':
     train_data_path,test_data_path = data_intake.initiate_data_ingestion()
     
     data_transform = DataTransformation()
-    data_transform.initate_data_transformation(train_path=train_data_path,test_path=test_data_path)
+    #data_transform.initate_data_transformation(train_path=train_data_path,test_path=test_data_path)
     train_array,test_array,_ = data_transform.initate_data_transformation(train_path=train_data_path,test_path=test_data_path)
     
     model_training = ModelTrainer()

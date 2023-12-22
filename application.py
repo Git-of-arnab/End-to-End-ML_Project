@@ -46,4 +46,5 @@ def predict_datapoint():
 ##Test-run
 
 if __name__=='__main__':
-    app.run(host="0.0.0.0",debug=True)
+    #app.run(host="0.0.0.0",debug=True)
+    app.run(host="0.0.0.0")  #Removing debug=True for deploying on AWS
